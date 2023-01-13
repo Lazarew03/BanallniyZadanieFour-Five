@@ -11,32 +11,19 @@ namespace BanallniyZadanieFour_Five
         static void Main(string[] args)
         {
             Bank bank = new Bank(); // Экземпляр класса Bank - bank
-            Console.Write("Введите на сколько лет положите вклад(3 или более): ");
-            int ageDeposit = Convert.ToInt32(Console.ReadLine()); // пользователь вводит число - лет годов 
             Console.Write("Введите сумму вклада(можно и с копейками влаживать(через запятую)): ");
             double amountDeposit = Convert.ToDouble(Console.ReadLine()); // пользователь вводит число - сумма вклада
+            Console.Write("Введите на сколько лет положите вклад(3 или более): ");
+            int ageDeposit = Convert.ToInt32(Console.ReadLine()); // пользователь вводит число - лет годов
             if (ageDeposit >= 3) // условие если года равны 3 или больше, то всё чики-пуки, а если пользователь, не знает русского языка, и не понял ЧТО ЕМУ НУЖНО ВВЕСТИ 3 ИЛИ БОЛЕЕ, то переходит в else
             {
                 Console.WriteLine($"Через {ageDeposit} года/лет ваш вклад будет равен: {bank.DepositVariable(ageDeposit, amountDeposit)} рублей"); //На консоль выводится результат 4-ого задания
                 Console.WriteLine($"Поздравляю вас, наш замечательный банк, за ваш вклад начисляет 15 Е-Баллов(не зависит от суммы вклада) и теперь ваша сумма вклада равна: {bank.DepositBonus(ageDeposit,amountDeposit)}");//На консоль выводится результат 5-ого задания
             }
             else
-            {
-                Console.WriteLine("Введите, кол-во лет вклада, больше 2");
-                ageDeposit = Convert.ToInt32(Console.ReadLine()); //пользователь заново вводит число лет, если всё верно, условие выполняется и выводится результат
-                if (ageDeposit >= 3)
-                {
-                    Console.WriteLine($"Через {ageDeposit} года/лет ваш вклад будет равен: {bank.DepositVariable(ageDeposit, amountDeposit)} рублей");//На консоль выводится результат 4-ого задания
-                    Console.WriteLine($"Поздравляю вас, наш замечательный банк, за ваш вклад начисляет 15 Е-Баллов(не зависит от суммы вклада) и теперь ваша сумма вклада равна: {bank.DepositBonus(ageDeposit, amountDeposit)}");//На консоль выводится результат 5-ого задания
-                }
-                else // да... да да, тяжко
-                {
-                    Console.WriteLine("Перезапускай программу ?#@*&%!");
-                }
-            }
-           
+                Console.WriteLine("Не верно выбрано : на сколько лет(годов) будет сделан вклад");
+            Console.ReadKey();
         }
-        
     }
     public class Bank
     {
